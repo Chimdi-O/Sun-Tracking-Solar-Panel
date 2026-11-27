@@ -8,8 +8,9 @@ void ServoDriver::begin(){
     servo.attach(PIN); 
 }
 
-void ServoDriver::set(int position){ 
+int ServoDriver::set(int position){ 
     if (position != servo.read()){
         servo.write(position); 
      }
+    return 0; 
 }

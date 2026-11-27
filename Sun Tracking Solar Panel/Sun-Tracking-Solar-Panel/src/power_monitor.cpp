@@ -11,23 +11,27 @@ bool PowerMonitor::begin(TwoWire *the_wire){
     if (! _sensors[0].begin(the_wire)){ 
         all_ok = false; 
     }else if(! _sensors[1].begin(the_wire) ){ 
-        all_ok = false;} 
+        all_ok = false;
+    }else if (! _sensors[2].begin(the_wire)){ 
+        all_ok = false; 
+    }
 
     return all_ok;
 
 }  
 
-void PowerMonitor::takeReading(){ 
-    /*Reading{ 
-        _sensor.getShuntVoltage_mV(),
-        _sensor.getBusVoltage_V(),
-        _sensor.getCurrent_mA(),
-        _sensor.getPower_mW()
-    };*/
-    Serial.print("Arduino:");
+int PowerMonitor::takeReading(int unused){ 
+
+    Serial.print("Arduino: ");
     Serial.print(_sensors[0].getPower_mW());
     Serial.print("  Motor:");
     Serial.print(_sensors[1].getPower_mW());
+    Serial.print("  Tracking System: ");
+    Serial.print(_sensors[2].getPower_mW());
+    Serial.print("  Solar Panel: ");
+    Serial.print(_sensors[3].getPower_mW());
     Serial.print("\n");
+
+    return 0;
 
 }

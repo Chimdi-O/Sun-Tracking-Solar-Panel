@@ -6,5 +6,6 @@ struct Task{
   unsigned long interval;
   unsigned long last_run_time; 
   T* object;
-  void (T::*execute)(int); 
+  int (T::*execute)(int); 
+  int last_output; 
 };

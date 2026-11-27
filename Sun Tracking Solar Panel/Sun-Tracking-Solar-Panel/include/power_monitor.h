@@ -16,14 +16,16 @@ class PowerMonitor{
     public: 
         PowerMonitor(); 
         bool begin(TwoWire *theWire = &Wire); 
-        void takeReading(int unused );
+        int takeReading(int unused );
         //void powerSave(bool enable); 
        
 
     private: 
-        Adafruit_INA219 _sensors[2] = { 
+        Adafruit_INA219 _sensors[4] = { 
             Adafruit_INA219(0x43), 
-            Adafruit_INA219(0x42)
+            Adafruit_INA219(0x42),
+            Adafruit_INA219(0x41), 
+            Adafruit_INA219(0x40)
         }; 
 
         bool _initialised; 
