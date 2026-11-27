@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Sun-Tracking-Solar-Panel",
+			"path": ".."
+		},
+		{
+			"name": "UNO solar tracker",
+			"path": "../../../UNO solar tracker"
+		},
+		{
+			"name": "Blank",
+			"path": "../../../../../../PlatformIO/Projects/Blank"
+		}
+	],
+	"settings": {}
+}
